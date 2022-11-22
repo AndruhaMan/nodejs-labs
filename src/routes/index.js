@@ -6,7 +6,7 @@ function OPTIONS(req, res) {
   res.json({ name: 'root options' })
 }
 
-function POST(req, res) {
+function POST(req, res, url, payload) {
   res.json({ contentType: req.headers['content-type'], payload })
 }
 
