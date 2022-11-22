@@ -23,7 +23,9 @@ async function loadRoutesDir(dirName, base) {
     ) {
       const modulePath = pathToFileURL(path.join(workDir, dirent.name))
       const module = await import(modulePath)
-      router.set(relativePath.replaceAll(path.sep, '/'), { ...module })
+      router.set(`/api/app${relativePath.replaceAll(path.sep, '/')}`, {
+        ...module,
+      })
     }
   }
 }
